@@ -81,7 +81,7 @@ def exists(parent, node):
 		else: break
 	return False
 
-def breadth_first_search(node):
+def depth_first_search(node):
 	arrived = [Pair(0, 1), Pair(0, 2), Pair(1, 1), Pair(1, 0), Pair(2, 0)]
 	leaved = [Pair(-2, 0), Pair(-1, 0), Pair(-1, -1), Pair(0, -2), Pair(0, -1)]
 
@@ -108,9 +108,9 @@ def breadth_first_search(node):
 			return True
 		if child.has_children():
 			for grandson in child.children:
-				breadth_first_search(grandson)
+				depth_first_search(grandson)
 
 
 if __name__ == '__main__':
 	root = Node(Pair(0, 0), None)
-	breadth_first_search(root)
+	depth_first_search(root)
